@@ -1,5 +1,6 @@
 package com.example.xcriticalapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -22,6 +23,12 @@ class MainActivity : AppCompatActivity() {
         val password by lazy {findViewById<EditText>(R.id.password_editText)}
         val wrong_email by lazy {findViewById<TextView>(R.id.wrong_email_text)}
         val wrong_password by lazy {findViewById<TextView>(R.id.wrong_password_text)}
+        val forgot_password by lazy {findViewById<TextView>(R.id.forgot_password_textView)}
+
+        forgot_password.setOnClickListener{
+        val intent = Intent(this, ForgotPasswordActivity::class.java)
+        startActivity(intent)
+        }
 
         sign_in_button = findViewById(R.id.sign_in_button)
         registration_button = findViewById(R.id.register_button)
