@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">XCriticalApp</string>
+    <string name="email">E-mail</string>
+    <string name="password">Пароль</string>
+    <string name="wrong_email">Неверный e-mail</string>
+    <string name="wrong_password">Неверный пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="add_password">Введите пароль</string>
+    <string name="add_email">Введите e-mail</string>
+
+</resources>
