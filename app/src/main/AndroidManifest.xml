@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".SuccessRegistrationActivity"></activity>
+        <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

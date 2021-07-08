@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.2" />
 
     <ImageView
         android:id="@+id/xcritical_registration_imageView"
@@ -41,7 +41,6 @@
             android:id="@+id/first_name_registration_linearlayout"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="40dp"
             android:orientation="vertical">
 
             <TextView
@@ -158,10 +157,11 @@
                 android:text="@string/phone" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/registration_editTextPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/phone"
                 android:inputType="phone"
                 android:textColorHint="@color/app_light_purple"
                 android:textSize="12dp" />
@@ -187,7 +187,7 @@
                 android:id="@+id/new_registration_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/main_button_style"
+                android:background="@drawable/button_style"
                 android:text="@string/register"
                 android:textAllCaps="false" />
 

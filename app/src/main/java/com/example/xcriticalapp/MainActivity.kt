@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
     private fun initListeners() {
 
         forgotPassword.setOnClickListener {
-            val intent = Intent(this, ForgotPasswordActivity::class.java)
-            startActivity(intent)
+            val forgotPasswordIntent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(forgotPasswordIntent)
          }
 
         signInButton.setOnClickListener {
@@ -47,18 +47,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         registrationButton.setOnClickListener {
-            if(email.text.toString().isNullOrEmpty())
-            {
-                wrongEmail.visibility=View.VISIBLE
-            }
-            if(password.text.toString().isNullOrEmpty())
-            {
-                wrongPassword.visibility=View.VISIBLE
-            }
-            else{
-                val intent = Intent(this, RegistrationActivity::class.java)
-                startActivity(intent)
-            }
+                val registrationIntent = Intent(this, RegistrationActivity::class.java)
+                startActivity(registrationIntent)
         }
 
         email.addTextChangedListener(object:TextWatcher {

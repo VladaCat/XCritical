@@ -18,5 +18,13 @@
     <string name="terms_of_use">Я принимаю пользовательское соглашение</string>\
     <string name="incorrect_email">Некорректный e-mail</string>
     <string name="incorrect_phone">Некорректный номер телефона</string>
+    <string name="thanks"><b>Благодарим за регистрацию!</b></string>
+    <string name="thanks_description">
+        Логин и пароль отправлены вам на e-mail.
+        Вы можете задать PIN-код для упрощенной
+        авторизации.
+    </string>
+    <string name="next">Далее</string>
+    <string name="add_pin">Задать PIN</string>
 
 </resources>
