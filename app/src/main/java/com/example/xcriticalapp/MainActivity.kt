@@ -11,47 +11,46 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
 
-lateinit var sign_in_button:Button
-lateinit var registration_button:Button
 
 
 class MainActivity : AppCompatActivity() {
+    private val email by lazy {findViewById<EditText>(R.id.email_editText)}
+    private val password by lazy {findViewById<EditText>(R.id.password_editText)}
+    private val wrongEmail by lazy {findViewById<TextView>(R.id.wrong_email_textView)}
+    private val wrongPassword by lazy {findViewById<TextView>(R.id.wrong_password_TextView)}
+    private val forgotPassword by lazy {findViewById<TextView>(R.id.forgot_password_textView)}
+    private val signInButton by lazy {findViewById<TextView>(R.id.sign_in_button)}
+    private val registrationButton by lazy {findViewById<TextView>(R.id.register_button)}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val email by lazy {findViewById<EditText>(R.id.email_editText)}
-        val password by lazy {findViewById<EditText>(R.id.password_editText)}
-        val wrong_email by lazy {findViewById<TextView>(R.id.wrong_email_text)}
-        val wrong_password by lazy {findViewById<TextView>(R.id.wrong_password_text)}
-        val forgot_password by lazy {findViewById<TextView>(R.id.forgot_password_textView)}
 
-        forgot_password.setOnClickListener{
+        forgotPassword.setOnClickListener{
         val intent = Intent(this, ForgotPasswordActivity::class.java)
         startActivity(intent)
         }
 
-        sign_in_button = findViewById(R.id.sign_in_button)
-        registration_button = findViewById(R.id.register_button)
 
-        sign_in_button.setOnClickListener {
-            if(email.text.toString().isEmpty())
+        signInButton.setOnClickListener {
+            if(email.text.toString().isNullOrEmpty())
             {
-                wrong_email.visibility=View.VISIBLE
+                wrongEmail.visibility=View.VISIBLE
             }
-            if(password.text.toString().isEmpty())
+            if(password.text.toString().isNullOrEmpty())
             {
-                wrong_password.visibility=View.VISIBLE
+                wrongPassword.visibility=View.VISIBLE
             }
         }
 
-        registration_button.setOnClickListener {
-            if(email.text.toString().isEmpty())
+        registrationButton.setOnClickListener {
+            if(email.text.toString().isNullOrEmpty())
             {
-                wrong_email.visibility=View.VISIBLE
+                wrongEmail.visibility=View.VISIBLE
             }
-            if(password.text.toString().isEmpty())
+            if(password.text.toString().isNullOrEmpty())
             {
-                wrong_password.visibility=View.VISIBLE
+                wrongPassword.visibility=View.VISIBLE
             }
         }
 
@@ -68,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 s: CharSequence, start: Int,
                 before: Int, count: Int
             ) {
-                wrong_email.visibility=View.INVISIBLE
+                wrongEmail.visibility=View.INVISIBLE
             }
         })
 
@@ -85,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                 s: CharSequence, start: Int,
                 before: Int, count: Int
             ) {
-                wrong_password.visibility=View.INVISIBLE
+                wrongPassword.visibility=View.INVISIBLE
             }
         })
     }
