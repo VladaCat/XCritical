@@ -22,13 +22,19 @@ class MainActivity : AppCompatActivity() {
     private val signInButton by lazy {findViewById<TextView>(R.id.sign_in_button)}
     private val registrationButton by lazy {findViewById<TextView>(R.id.register_button)}
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initListeners()
+
+    }
+
+    private fun initListeners() {
         forgotPassword.setOnClickListener{
-        val intent = Intent(this, ForgotPasswordActivity::class.java)
-        startActivity(intent)
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
         }
 
 
