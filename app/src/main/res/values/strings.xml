@@ -9,5 +9,14 @@
     <string name="forgot_password">Забыли пароль?</string>
     <string name="add_password">Введите пароль</string>
     <string name="add_email">Введите e-mail</string>
+    <string name="required_field">Обязательное поле</string>
+    <string name="first_name">Имя</string>
+    <string name="second_name">Фамилия</string>
+    <string name="add_first_name">Ваше имя</string>
+    <string name="add_second_name">Ваша фамилия</string>
+    <string name="phone">Телефон</string>
+    <string name="terms_of_use">Я принимаю пользовательское соглашение</string>\
+    <string name="incorrect_email">Некорректный e-mail</string>
+    <string name="incorrect_phone">Некорректный номер телефона</string>
 
 </resources>

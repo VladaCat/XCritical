@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.402"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_top">
+        app:layout_constraintTop_toTopOf="@+id/main_guideline">
 
         <LinearLayout
             android:id="@+id/email_linearlayout"
@@ -32,6 +32,8 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
                 android:text="@string/email" />
 
             <EditText
@@ -42,6 +44,7 @@
                 android:hint="@string/add_email"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/app_white"
+                android:textColorHint="@color/app_light_purple"
                 android:textSize="12sp" />
 
             <TextView
@@ -63,6 +66,8 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
                 android:text="@string/password" />
 
             <EditText
@@ -70,9 +75,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword"
                 android:hint="@string/add_password"
+                android:inputType="textPassword"
                 android:textColor="@color/app_white"
+                android:textColorHint="@color/app_light_purple"
                 android:textSize="12sp" />
 
             <TextView
@@ -91,7 +97,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="@string/forgot_password"
-            android:textColor="@color/app_light_blue"
+            android:textColor="#687BDD"
+            android:clickable="true"
             android:textSize="12sp" />
 
         <LinearLayout
@@ -105,7 +112,7 @@
                 android:id="@+id/sign_in_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/sign_in_button_style"
+                android:background="@drawable/main_button_style"
                 android:text="@string/sign_in"
                 android:textAllCaps="false" />
 
@@ -114,7 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/registration_button_style"
+                android:background="@drawable/button_style"
                 android:text="@string/register"
                 android:textAllCaps="false" />
         </LinearLayout>
@@ -122,18 +129,18 @@
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_top"
+        android:id="@+id/main_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.25" />
 
     <ImageView
-        android:id="@+id/xcritical_imageView"
+        android:id="@+id/xcritical_main_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_top"
+        app:layout_constraintBottom_toTopOf="@+id/main_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

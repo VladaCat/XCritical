@@ -6,11 +6,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View;
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.core.widget.addTextChangedListener
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,11 +29,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initListeners() {
-        forgotPassword.setOnClickListener{
+
+        forgotPassword.setOnClickListener {
             val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
-        }
-
+         }
 
         signInButton.setOnClickListener {
             if(email.text.toString().isNullOrEmpty())
@@ -57,6 +54,10 @@ class MainActivity : AppCompatActivity() {
             if(password.text.toString().isNullOrEmpty())
             {
                 wrongPassword.visibility=View.VISIBLE
+            }
+            else{
+                val intent = Intent(this, RegistrationActivity::class.java)
+                startActivity(intent)
             }
         }
 
