@@ -25,6 +25,7 @@
         авторизации.
     </string>
     <string name="next">Далее</string>
+    <string name="back">Назад</string>
     <string name="add_pin">Задать PIN</string>
     <string name="error_email">Некорректный e-mail</string>
 
