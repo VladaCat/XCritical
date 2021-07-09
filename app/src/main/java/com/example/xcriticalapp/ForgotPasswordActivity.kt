@@ -36,6 +36,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
             {
                 wrongForgotEmail.visibility= View.VISIBLE
             }
+
         }
 
         forgotEmail.addTextChangedListener(object: TextWatcher {

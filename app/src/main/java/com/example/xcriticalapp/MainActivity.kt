@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View;
 import android.widget.EditText
 import android.widget.TextView
@@ -31,7 +32,36 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initListeners()
+        Log.d("activityLiveCycleTest","onCreate")
+    }
 
+    override fun onPause(){
+        super.onPause()
+        Log.w("activityLiveCycleTest2","onPause")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("activityLiveCycleTest","onResume")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("activityLiveCycleTest2","onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("activityLiveCycleTest","onDestroy")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("activityLiveCycleTest","onStop")
+    }
+    override fun onStart() {
+        super.onStart()
+        Log.d("activityLiveCycleTest2","onStart")
     }
 
     private fun validationEmail(email: String) = emailAddressPattern.matcher(email).matches()
