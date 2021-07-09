@@ -9,6 +9,13 @@
     android:paddingRight="20dp"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/main_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
     <LinearLayout
         android:id="@+id/main_linearLayout"
         android:layout_width="0dp"
@@ -17,7 +24,6 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.402"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/main_guideline">
 
@@ -92,20 +98,22 @@
 
         <TextView
             android:id="@+id/forgot_password_textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:text="@string/forgot_password"
             android:textColor="#687BDD"
-            android:clickable="true"
             android:textSize="12sp" />
 
         <LinearLayout
             android:id="@+id/buttons_linearlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:orientation="vertical">
 
             <Button
@@ -127,13 +135,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/main_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
 
     <ImageView
         android:id="@+id/xcritical_main_imageView"

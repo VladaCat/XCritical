@@ -8,6 +8,8 @@ import android.text.TextWatcher
 import android.view.View;
 import android.widget.EditText
 import android.widget.TextView
+import java.util.regex.Pattern
+import android.util.Patterns
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,15 +20,34 @@ class MainActivity : AppCompatActivity() {
     private val forgotPassword by lazy {findViewById<TextView>(R.id.forgot_password_textView)}
     private val signInButton by lazy {findViewById<TextView>(R.id.sign_in_button)}
     private val registrationButton by lazy {findViewById<TextView>(R.id.register_button)}
+    private val errorEmail by lazy {findViewById<TextView>(R.id.wrong_email_textView)}
+
+    //private val str:String="email_editText"
+    //private val pattern = Regex("^[0-9A-Za-z]+(.?[0-9A-Za-z]+){2,29}.?[0-9A-Za-z]+@[a-z]+.[a-z]{2,4}\$")
+    //private val result = pattern.containsMatchIn(str)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //validationEmail()
         initListeners()
+        //println(result)
 
     }
+
+   /* private fun validationEmail() {
+        if(email.text.toString().isNullOrEmpty())
+        {
+            wrongEmail.visibility=View.VISIBLE
+        }
+        else if(!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches())
+        {
+            wrongEmail.visibility=View.VISIBLE
+        }
+    }*/
+
 
     private fun initListeners() {
 
@@ -36,13 +57,18 @@ class MainActivity : AppCompatActivity() {
          }
 
         signInButton.setOnClickListener {
-            if(email.text.toString().isNullOrEmpty())
-            {
-                wrongEmail.visibility=View.VISIBLE
-            }
+
             if(password.text.toString().isNullOrEmpty())
             {
                 wrongPassword.visibility=View.VISIBLE
+            }
+            else if(email.text.toString().isNullOrEmpty())
+            {
+                wrongEmail.visibility=View.VISIBLE
+            }
+            else if(!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches())
+            {
+                wrongEmail.visibility=View.VISIBLE
             }
         }
 
