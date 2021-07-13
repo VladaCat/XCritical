@@ -14,5 +14,6 @@
     <color name="app_white">#E5E5E5</color>
     <color name="app_purple">#1A1933</color>
     <color name="app_light_red">#FF2A50</color>
+    <color name="grey">#666B87</color>
 
 </resources>
