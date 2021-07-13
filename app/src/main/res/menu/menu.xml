@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/myDealsFragment"
+        android:title="@string/my_deals"
+        android:icon="@drawable/ic_wallet"
+        app:showAsAction="ifRoom"
+        android:enabled="true">
+    </item>
+
+    <item android:title="@string/instruments"
+        android:id="@+id/toolsFragment"
+        android:icon="@drawable/ic_bar_chart"
+        app:showAsAction="ifRoom"
+        android:enabled="true">
+    </item>
+
+    <item android:title="@string/account"
+        android:id="@+id/accountFragment"
+        android:icon="@drawable/ic_user_1"
+        app:showAsAction="ifRoom"
+        android:enabled="true">
+    </item>
+
+    <item
+        android:enabled="true"
+        android:id="@+id/signalFragment"
+        android:title="@string/signals"
+        android:icon="@drawable/ic_bell"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:enabled="true"
+        android:title="@string/more"
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/ic_more_vertical_circle"
+        app:showAsAction="ifRoom">
+    </item>
+</menu>

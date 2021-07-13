@@ -28,5 +28,13 @@
     <string name="back">Назад</string>
     <string name="add_pin">Задать PIN</string>
     <string name="error_email">Некорректный e-mail</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_deals">МОИ СДЕЛКИ</string>
+    <string name="account">МОЙ АККАУНТ</string>
+    <string name="instruments">ИНСТРУМЕНТЫ</string>
+    <string name="signals">СИГНАЛЫ</string>
+    <string name="more">ЕЩЕ</string>
+
 
 </resources>
