@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.xcriticalapp.Adapter
-import com.example.xcriticalapp.ExampleItem
+import com.example.xcriticalapp.adapter.Adapter
+import com.example.xcriticalapp.adapter.ExampleItem
 import com.example.xcriticalapp.R
 
 class MyDealsFragment : Fragment() {
@@ -34,15 +34,10 @@ class MyDealsFragment : Fragment() {
                 0 -> R.drawable.ic_recycle_icon
                 else -> R.drawable.ic_star
             }
-            val item = ExampleItem(text1="BATUSD" , "CocaCola", "73,2391","/","73,5678","0,31%")
+            val item = ExampleItem("BATUSD" , "CocaCola", "73,2391","/","73,5678","0,31%")
             list += item
         }
         return list
     }
 
-//    private fun fillList(): List<ExampleItem> {
-//        val data = mutableListOf<String>()
-//        (0..30).forEach { i -> data.add("\$i element") }
-//        return data
-//    }
 }
