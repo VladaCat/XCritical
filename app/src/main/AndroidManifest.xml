@@ -13,7 +13,7 @@
         <activity android:name=".SuccessRegistrationActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".Navigation">
+        <activity android:name=".MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

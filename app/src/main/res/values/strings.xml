@@ -30,11 +30,18 @@
     <string name="error_email">Некорректный e-mail</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="my_deals">МОИ СДЕЛКИ</string>
-    <string name="account">МОЙ АККАУНТ</string>
+    <string name="my_deals">СДЕЛКИ</string>
+    <string name="account">АККАУНТ</string>
     <string name="instruments">ИНСТРУМЕНТЫ</string>
     <string name="signals">СИГНАЛЫ</string>
     <string name="more">ЕЩЕ</string>
+    <string name="delimiter">/</string>
+    <string name="company">BATUSD</string>
+    <string name="hidden_company">CocaCola</string>
+    <string name="first_number">73,2391</string>
+    <string name="second_number">73,5678</string>
+    <string name="percent">0,31%</string>
+
 
 
 </resources>

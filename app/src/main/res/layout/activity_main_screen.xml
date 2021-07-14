@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_white"
-    tools:context=".Navigation">
+    tools:context=".MainScreen">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -43,5 +43,8 @@
         app:menu="@menu/menu"
         app:itemIconTint="@drawable/navigation_style"
         app:itemTextColor="@drawable/navigation_style"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
