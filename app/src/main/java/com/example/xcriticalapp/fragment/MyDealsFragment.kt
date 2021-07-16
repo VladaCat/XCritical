@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -29,7 +30,11 @@ class MyDealsFragment : Fragment() {
         val model: MyViewModel by viewModels()
         val recyclerView = getView()?.findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView?.layoutManager = LinearLayoutManager(this.context)
-        recyclerView?.adapter = Adapter(model.generateDummyList(15))
+        recyclerView?.adapter = Adapter(model.generateDummyList(15), { itemClicked() } )
+    }
+
+    private fun itemClicked() {
+        Toast.makeText(this.context, "Clicked", Toast.LENGTH_SHORT).show()
     }
 
 }

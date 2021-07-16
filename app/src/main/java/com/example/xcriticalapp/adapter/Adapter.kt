@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.xcriticalapp.R
 
 
-public class Adapter(private val exampleList:List<ExampleItem>) : RecyclerView.Adapter<Adapter.ExampleViewHolder>(){
+public class Adapter(private val exampleList:List<ExampleItem>,
+                     private val clickListener: () -> Unit) : RecyclerView.Adapter<Adapter.ExampleViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
@@ -24,6 +25,7 @@ public class Adapter(private val exampleList:List<ExampleItem>) : RecyclerView.A
         holder.textView4.text = currentItem.text4
         holder.textView5.text = currentItem.text5
         holder.textView6.text = currentItem.text6
+        holder.itemView.setOnClickListener{clickListener()}
     }
 
     override fun getItemCount(): Int = exampleList.size
