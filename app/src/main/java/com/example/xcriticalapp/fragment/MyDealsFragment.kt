@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -31,17 +32,12 @@ class MyDealsFragment : Fragment() {
         val model: MyViewModel by viewModels()
         val recyclerView = getView()?.findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView?.layoutManager = LinearLayoutManager(this.context)
-        recyclerView?.adapter = Adapter(model.generateDummyList(15), { itemClicked() } )
+        recyclerView?.adapter = Adapter(model.generateDummyList(15)) { id -> itemClicked(id)}
     }
 
-    private fun itemClicked() {
+    private fun itemClicked(id:Int) {
         //Toast.makeText(this.context, "Clicked", Toast.LENGTH_SHORT).show()
-
-        val bundle = Bundle()
-        val idCard = "Cat"
-        bundle.putString(
-            "Hello, ", idCard
-        )
+        val bundle = bundleOf("id" to "Card id $id")
         view?.findNavController()?.navigate(R.id.action_myDealsFragment_to_accountFragment,bundle)
     }
 

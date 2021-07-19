@@ -20,7 +20,7 @@ class AccountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val av = view.findViewById<TextView>(R.id.hello_account)
-        av?.text = arguments?.getString("Hello")
+        av?.text = arguments?.getString("id")
     }
 
 }
