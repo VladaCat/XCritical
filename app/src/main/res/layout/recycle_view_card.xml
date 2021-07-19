@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/ic_recycle_icon" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/companyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -32,57 +32,57 @@
         app:layout_constraintVertical_bias="0.37" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/productText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
         android:text="@string/hidden_company"
         android:textColor="@color/app_white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintEnd_toStartOf="@+id/firstNumberText"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/companyText"
         app:layout_constraintVertical_bias="0.062" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/firstNumberText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="@string/first_number"
         android:textColor="@color/app_white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/delimiterText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.506" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/delimiterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="@string/delimiter"
         android:textColor="@color/app_white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/secondNumberText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.506" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/secondNumberText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="@string/second_number"
         android:textColor="@color/app_white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintEnd_toStartOf="@+id/percentText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.506" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/percentText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

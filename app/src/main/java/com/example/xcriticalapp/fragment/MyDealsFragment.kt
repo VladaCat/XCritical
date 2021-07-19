@@ -5,17 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.xcriticalapp.MyViewModel
+import com.example.xcriticalapp.activity.MyViewModel
 import com.example.xcriticalapp.adapter.Adapter
-import com.example.xcriticalapp.adapter.ExampleItem
 import com.example.xcriticalapp.R
 
 class MyDealsFragment : Fragment() {

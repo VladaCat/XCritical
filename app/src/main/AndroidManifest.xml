@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".SuccessRegistrationActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".MainScreen">
+        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.SuccessRegistrationActivity" />
+        <activity android:name=".activity.ForgotPasswordActivity" />
+        <activity android:name=".activity.RegistrationActivity" />
+        <activity android:name=".activity.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

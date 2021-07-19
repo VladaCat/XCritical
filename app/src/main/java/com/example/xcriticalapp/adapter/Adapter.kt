@@ -26,12 +26,12 @@ class Adapter(private val exampleList:List<ExampleItem>,
 
     class ExampleViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         fun bind(exampleItem: ExampleItem,clickListener: (Int) -> Unit){
-        val textView:TextView = itemView.findViewById(R.id.textView)
-        val textView2:TextView = itemView.findViewById(R.id.textView2)
-        val textView3:TextView = itemView.findViewById(R.id.textView3)
-        val textView4:TextView = itemView.findViewById(R.id.textView4)
-        val textView5:TextView = itemView.findViewById(R.id.textView5)
-        val textView6:TextView = itemView.findViewById(R.id.textView6)
+        val companyTextView:TextView = itemView.findViewById(R.id.companyText)
+        val productTextView:TextView = itemView.findViewById(R.id.productText)
+        val firstNumberTextView:TextView = itemView.findViewById(R.id.firstNumberText)
+        val delimiterTextView:TextView = itemView.findViewById(R.id.delimiterText)
+        val secondNumberTextView:TextView = itemView.findViewById(R.id.secondNumberText)
+        val percentTextView:TextView = itemView.findViewById(R.id.percentText)
             itemView.setOnClickListener{clickListener(exampleItem.id)}
         }
 

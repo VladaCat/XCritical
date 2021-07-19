@@ -1,8 +1,7 @@
-package com.example.xcriticalapp
+package com.example.xcriticalapp.activity
 
-import android.os.Bundle
 import androidx.lifecycle.ViewModel
-import androidx.navigation.findNavController
+import com.example.xcriticalapp.R
 import com.example.xcriticalapp.adapter.ExampleItem
 import java.util.regex.Pattern
 

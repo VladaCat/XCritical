@@ -1,4 +1,4 @@
-package com.example.xcriticalapp
+package com.example.xcriticalapp.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import com.example.xcriticalapp.R
 
 class RegistrationActivity : AppCompatActivity() {
     private val firstName by lazy {findViewById<EditText>(R.id.add_first_name_plainView)}
