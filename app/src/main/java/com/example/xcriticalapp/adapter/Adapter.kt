@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.xcriticalapp.R
 
 
-public class Adapter(private val exampleList:List<ExampleItem>,
+class Adapter(private val exampleList:List<ExampleItem>,
                      private val clickListener: () -> Unit) : RecyclerView.Adapter<Adapter.ExampleViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {

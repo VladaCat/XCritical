@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xcriticalapp.MyViewModel
@@ -34,7 +35,14 @@ class MyDealsFragment : Fragment() {
     }
 
     private fun itemClicked() {
-        Toast.makeText(this.context, "Clicked", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this.context, "Clicked", Toast.LENGTH_SHORT).show()
+
+        val bundle = Bundle()
+        val idCard = "Cat"
+        bundle.putString(
+            "Hello, ", idCard
+        )
+        view?.findNavController()?.navigate(R.id.action_myDealsFragment_to_accountFragment,bundle)
     }
 
 }

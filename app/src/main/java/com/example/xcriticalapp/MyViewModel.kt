@@ -1,6 +1,8 @@
 package com.example.xcriticalapp
 
+import android.os.Bundle
 import androidx.lifecycle.ViewModel
+import androidx.navigation.findNavController
 import com.example.xcriticalapp.adapter.ExampleItem
 import java.util.regex.Pattern
 
@@ -14,9 +16,9 @@ class MyViewModel:ViewModel() {
         for (i in 0 until size) {
             val drawable = when (i % 2) {
                 0 -> R.drawable.ic_recycle_icon
-                else -> R.drawable.ic_star
+                else -> R.drawable.ic_star_3
             }
-            val item = ExampleItem("BATUSD" , "CocaCola", "73,2391","/","73,5678","0,31%")
+            val item = ExampleItem( i ,"BATUSD", "CocaCola", "73,2391","/","73,5678","0,31%")
             list += item
         }
         return list
@@ -33,5 +35,6 @@ class MyViewModel:ViewModel() {
     fun validationPassword():Boolean{
         return viewpassword.isNullOrEmpty()
     }
+
 
 }

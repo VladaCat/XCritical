@@ -14,7 +14,11 @@
         android:id="@+id/myDealsFragment"
         android:name="com.example.xcriticalapp.fragment.MyDealsFragment"
         android:label="fragment_my_deals"
-        tools:layout="@layout/fragment_my_deals" />
+        tools:layout="@layout/fragment_my_deals" >
+        <action
+            android:id="@+id/action_myDealsFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
     <fragment
         android:id="@+id/moreFragment"
         android:name="com.example.xcriticalapp.fragment.MoreFragment"
