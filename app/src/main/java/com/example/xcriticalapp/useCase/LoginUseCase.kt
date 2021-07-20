@@ -1,4 +1,6 @@
 package com.example.xcriticalapp.useCase
 
-class LoginUseCase {
+import javax.inject.Inject
+
+class LoginUseCase @Inject constructor() {
 }

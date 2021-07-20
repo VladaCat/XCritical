@@ -12,15 +12,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainScreen : AppCompatActivity() {
 
-   private val navController by lazy{ findNavController(R.id.fragmentNavHost)}
-
+   private val navController by lazy{findNavController(R.id.fragmentNavHost)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_screen)
         setupBottomNavMenu(navController)
-
     }
 
    private fun setupBottomNavMenu(navController: NavController) {
