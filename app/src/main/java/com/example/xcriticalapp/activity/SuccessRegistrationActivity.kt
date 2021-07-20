@@ -19,11 +19,11 @@ class SuccessRegistrationActivity : AppCompatActivity() {
 
     private fun initSuccessListeners() {
         successNextButton.setOnClickListener {
-            val mainIntent = Intent(this, MainActivity::class.java)
+            val mainIntent = Intent(this, LoginActivity::class.java)
             startActivity(mainIntent)
         }
         successPinButton.setOnClickListener {
-            val mainIntent = Intent(this, MainActivity::class.java)
+            val mainIntent = Intent(this, LoginActivity::class.java)
             startActivity(mainIntent)
         }
     }

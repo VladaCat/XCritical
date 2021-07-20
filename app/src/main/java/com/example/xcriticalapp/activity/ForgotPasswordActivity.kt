@@ -58,7 +58,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         })
 
         backForgotButton.setOnClickListener {
-            val mainIntent = Intent(this, MainActivity::class.java)
+            val mainIntent = Intent(this, LoginActivity::class.java)
             startActivity(mainIntent)}
 
 

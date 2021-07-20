@@ -1,12 +1,11 @@
-package com.example.xcriticalapp.adapter
+package com.example.xcriticalapp.useCase
 
 import com.example.xcriticalapp.R
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.xcriticalapp.adapter.ExampleItem
 import javax.inject.Inject
-import javax.inject.Singleton
 
 
-class UseCase @Inject constructor(){
+class MyDetailDealsUseCase @Inject constructor(){
     fun generateList(): ArrayList<ExampleItem> {
         val list = ArrayList<ExampleItem>()
         for (i in 0 until 20) {

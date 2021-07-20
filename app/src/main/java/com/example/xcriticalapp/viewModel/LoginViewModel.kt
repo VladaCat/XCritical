@@ -16,12 +16,12 @@ class LoginViewModel @Inject constructor(): ViewModel(){
     )
 
     fun validationEmail():Boolean{
-        //return emailadress.isNullOrEmpty()||!emailAddressPattern.matcher(emailadress).matches()
-        return true
+        return emailadress.isNullOrEmpty()||!emailAddressPattern.matcher(emailadress).matches()
+        //return true
     }
 
     fun validationPassword():Boolean{
-        //return viewpassword.isNullOrEmpty()
-        return true
+        return viewpassword.isNullOrEmpty()
+        //return true
     }
 }

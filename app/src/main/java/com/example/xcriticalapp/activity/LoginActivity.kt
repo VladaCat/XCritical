@@ -17,7 +17,7 @@ import dagger.hilt.android.HiltAndroidApp
 import java.util.regex.Pattern
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private val email by lazy {findViewById<EditText>(R.id.email_editText)}
     private val password by lazy {findViewById<EditText>(R.id.password_editText)}
@@ -90,9 +90,9 @@ class MainActivity : AppCompatActivity() {
             {
                 wrongPassword.visibility=View.VISIBLE
             }
-
             val mainScreenIntent = Intent(this, MainScreen::class.java)
             startActivity(mainScreenIntent)
+
         }
 
         registrationButton.setOnClickListener {

@@ -7,7 +7,7 @@
     android:background="@color/app_main_color"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.LoginActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/main_guideline"
