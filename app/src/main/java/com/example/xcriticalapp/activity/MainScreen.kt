@@ -7,8 +7,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.xcriticalapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainScreen : AppCompatActivity() {
 
    private val navController by lazy{ findNavController(R.id.fragmentNavHost)}

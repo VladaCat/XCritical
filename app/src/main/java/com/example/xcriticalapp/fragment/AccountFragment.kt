@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.xcriticalapp.R
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class AccountFragment : Fragment() {
 
     override fun onCreateView(
@@ -19,8 +22,8 @@ class AccountFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val av = view.findViewById<TextView>(R.id.hello_account)
-        av?.text = arguments?.getString("id")
+//        val av = view.findViewById<TextView>(R.id.hello_account)
+//        av?.text = arguments?.getString("id")
     }
 
 }

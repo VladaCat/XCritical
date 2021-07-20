@@ -16,8 +16,8 @@
         android:label="fragment_my_deals"
         tools:layout="@layout/fragment_my_deals" >
         <action
-            android:id="@+id/action_myDealsFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
+            android:id="@+id/action_myDealsFragment_to_myDetailDealsFragment"
+            app:destination="@id/myDetailDealsFragment" />
     </fragment>
     <fragment
         android:id="@+id/moreFragment"
@@ -34,4 +34,8 @@
         android:name="com.example.xcriticalapp.fragment.ToolsFragment"
         android:label="fragment_tools"
         tools:layout="@layout/fragment_tools" />
+    <fragment
+        android:id="@+id/myDetailDealsFragment"
+        android:name="com.example.xcriticalapp.fragment.MyDetailDealsFragment"
+        android:label="MyDetailDealsFragment" />
 </navigation>
