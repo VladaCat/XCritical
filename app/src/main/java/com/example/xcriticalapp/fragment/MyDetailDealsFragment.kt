@@ -23,6 +23,7 @@ class MyDetailDealsFragment : Fragment() {
     private val secondNumberText by lazy {view?.findViewById<TextView>(R.id.secondnbr_textView)}
     private val delimiterText by lazy {view?.findViewById<TextView>(R.id.delim_textView)}
     private val percentText by lazy {view?.findViewById<TextView>(R.id.perc_textView)}
+    private val idText by lazy {view?.findViewById<TextView>(R.id.id_textView)}
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +33,6 @@ class MyDetailDealsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         val itemClicked:Int = arguments?.getInt("id")!!
         init(itemClicked)
     }
@@ -47,7 +47,6 @@ class MyDetailDealsFragment : Fragment() {
         secondNumberText?.text = model.secondNumberText
         delimiterText?.text = model.delimiterText
         percentText?.text = model.percentText
-
     }
 
 }
