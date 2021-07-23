@@ -10,25 +10,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.example.xcriticalapp.ViewCustomDeposite
+<!--        <com.example.xcriticalapp.ViewCustomDeposite-->
 
-            android:id="@+id/viewCustomDeposite"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--            android:id="@+id/viewCustomDeposite"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="200dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewCustomDeposite"
+            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/recycle_view_card" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
-object Common {
+
     @Module
     @InstallIn(SingletonComponent::class)
     object Network {
@@ -30,4 +30,3 @@ object Common {
         @Provides
         fun provideService(retrofit: Retrofit): RetrofitServices = retrofit.create(RetrofitServices::class.java)
     }
-}

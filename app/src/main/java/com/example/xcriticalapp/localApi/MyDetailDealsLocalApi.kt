@@ -1,6 +1,7 @@
 package com.example.xcriticalapp.localApi
 
 import com.example.xcriticalapp.adapter.CardItem
+import com.example.xcriticalapp.model.Movie
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -8,6 +9,10 @@ import javax.inject.Singleton
 class MyDetailDealsLocalApi @Inject constructor() {
 
     private var list = ArrayList<CardItem>()
+    private var movieList:List<Movie>? = null
+    fun getMovieList(list: List<Movie>?){
+        movieList =list
+    }
 
     fun generateList(): ArrayList<CardItem> {
         if(list.isNullOrEmpty())
