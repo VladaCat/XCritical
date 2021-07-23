@@ -2,12 +2,13 @@ package com.example.xcriticalapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xcriticalapp.R
 
 
-class Adapter(private val cardList:List<CardItem>,
+class Adapter(private val cardList:List<CardItemWithImage>,
               private val clickListener: (Int) -> Unit) : RecyclerView.Adapter<Adapter.ExampleViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
@@ -19,22 +20,30 @@ class Adapter(private val cardList:List<CardItem>,
 
     override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
         val currentItem = cardList[position]
-        holder.bind(cardList[position],clickListener)
+       // holder.bind(cardList[position],clickListener)
+        holder.itemView.setOnClickListener{clickListener(currentItem.id)}
+        holder.companyTextView.text = currentItem.nameOfCompany
+        holder.productTextView.text = currentItem.nameOfProduct
+        holder.firstNumberTextView.text = currentItem.firstNumber
+        holder.delimiterTextView.text = currentItem.delimiter
+        holder.secondNumberTextView.text = currentItem.secondNumber
+        holder.percentTextView.text = currentItem.percent
+        holder.companyImage.setImageResource(currentItem.companyImage)
+        holder.starImage.setImageResource(currentItem.starImage)
     }
 
     override fun getItemCount(): Int = cardList.size
 
     class ExampleViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-        fun bind(cardItem: CardItem, clickListener: (Int) -> Unit){
+
         val companyTextView:TextView = itemView.findViewById(R.id.companyText)
         val productTextView:TextView = itemView.findViewById(R.id.productText)
         val firstNumberTextView:TextView = itemView.findViewById(R.id.firstNumberText)
         val delimiterTextView:TextView = itemView.findViewById(R.id.delimiterText)
         val secondNumberTextView:TextView = itemView.findViewById(R.id.secondNumberText)
         val percentTextView:TextView = itemView.findViewById(R.id.percentText)
-            itemView.setOnClickListener{clickListener(cardItem.id)}
-        }
-
+        val companyImage:ImageView=itemView.findViewById(R.id.company_imageView)
+        val starImage:ImageView=itemView.findViewById(R.id.star_imageView)
     }
 
 }

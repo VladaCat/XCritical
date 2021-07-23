@@ -40,6 +40,11 @@
     <string name="first_number">73,2391</string>
     <string name="second_number">73,5678</string>
     <string name="percent">0,31%</string>
+    <string name="presentation_first">$9 481,73</string>
+    <string name="presentation_second">Доступно: $9 481,73</string>
+    <string name="presentation_third">P$L: $266,03</string>
+    <string name="replenish_the_deposit">Пополнить депозит</string>
+
 
 
 </resources>
