@@ -41,6 +41,7 @@ class MyDetailDealsFragment : Fragment() {
     {
         val model = viewModel.getId(id)
 
+        idText?.text = model.id.toString()
         companyText?.text = model.companyText
         hintText?.text = model.productText
         firstNumberText?.text = model.firstNumberText
