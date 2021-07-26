@@ -40,14 +40,4 @@ class MyDealsFragment : Fragment() {
         view?.findNavController()?.navigate(R.id.action_myDealsFragment_to_myDetailDealsFragment4,bundle)
     }
 
-//    override fun onCreateView(inflater:LayoutInflater, //для фрагмента
-//                              container:ViewGroup?,
-//                              name: String,
-//                              context: Context,
-//                              attrs: AttributeSet,
-//                              savedInstanceState: Bundle?): View? {
-//
-//        val binding:ActivityLoginBinding = DataBindingUtil.inflate(inflater, R.layout.activity_login,container,false)
-//        return binding.root
-//    }
 }

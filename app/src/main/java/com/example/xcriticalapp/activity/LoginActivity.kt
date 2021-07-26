@@ -24,16 +24,7 @@ import java.util.regex.Pattern
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
-
-    private val email by lazy {findViewById<EditText>(R.id.email_editText)}
-    private val password by lazy {findViewById<EditText>(R.id.password_editText)}
-    private val wrongEmail by lazy {findViewById<TextView>(R.id.wrong_email_textView)}
-    private val wrongPassword by lazy {findViewById<TextView>(R.id.wrong_password_TextView)}
-    private val forgotPassword by lazy {findViewById<TextView>(R.id.forgot_password_textView)}
-    private val signInButton by lazy {findViewById<TextView>(R.id.sign_in_button)}
-    private val registrationButton by lazy {findViewById<TextView>(R.id.register_button)}
-    private val errorEmail by lazy {findViewById<TextView>(R.id.wrong_email_textView)}
-
+    
     //BINDING
     private lateinit var binding : ActivityLoginBinding
     private val viewModel by lazy { ViewModelProvider(this).get(LoginViewModel::class.java) }
@@ -97,93 +88,4 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private  fun isValidEmail(target: EditText) = emailAddressPattern.matcher(target.text.toString()).matches()
-    private fun listener(){
-        email.addTextChangedListener(object : TextWatcher {
-
-            override fun afterTextChanged(s: Editable?) {}
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                wrongEmail.isVisible = false
-            }
-
-        })
-
-        password.addTextChangedListener(object : TextWatcher {
-
-            override fun afterTextChanged(s: Editable?) {}
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                wrongPassword.isVisible = false
-            }
-
-        })
-
-//    private fun initListeners() {
-//
-//        viewModel.emailadress = email.text.toString()
-//        viewModel.viewpassword = password.text.toString()
-//        forgotPassword.setOnClickListener {
-//            val forgotPasswordIntent = Intent(this, ForgotPasswordActivity::class.java)
-//            startActivity(forgotPasswordIntent)
-//         }
-//
-//        signInButton.setOnClickListener {
-//
-//            if(!viewModel.validationEmail())
-//            {
-//                wrongEmail.visibility=View.VISIBLE
-//            }
-//            if(!viewModel.validationPassword())
-//            {
-//                wrongPassword.visibility=View.VISIBLE
-//            }
-//
-//
-//        }
-//
-//        registrationButton.setOnClickListener {
-//                val registrationIntent = Intent(this, RegistrationActivity::class.java)
-//                startActivity(registrationIntent)
-//        }
-//
-//        email.addTextChangedListener(object:TextWatcher {
-//            override fun afterTextChanged(s: Editable) {}
-//
-//            override fun beforeTextChanged(
-//                s: CharSequence, start: Int,
-//                count: Int, after: Int
-//            ) {
-//            }
-//
-//            override fun onTextChanged(
-//                s: CharSequence, start: Int,
-//                before: Int, count: Int
-//            ) {
-//                wrongEmail.visibility=View.INVISIBLE
-//            }
-//        })
-//
-//        password.addTextChangedListener(object:TextWatcher {
-//            override fun afterTextChanged(s: Editable) {}
-//
-//            override fun beforeTextChanged(
-//                s: CharSequence, start: Int,
-//                count: Int, after: Int
-//            ) {
-//            }
-//
-//            override fun onTextChanged(
-//                s: CharSequence, start: Int,
-//                before: Int, count: Int
-//            ) {
-//                wrongPassword.visibility=View.INVISIBLE
-//            }
-//        })
-//    }
-
-}}
+}
