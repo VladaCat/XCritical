@@ -13,12 +13,15 @@ class MyDetailDealsRepository @Inject constructor(
     ){
     private var listMovies : List<Movie>? = null
 
-    suspend fun getMovies()
+    suspend fun createMovies()
     {
         listMovies = retrofitServices.getMovieList().body()
-        myDetailDealsLocalApi.getMovieList(listMovies)
+        myDetailDealsLocalApi.createMovieList(listMovies)
     }
 
+    fun getMovies(): List<Movie>? {
+        return myDetailDealsLocalApi.getMovieList()
+    }
     fun getListFromApi(): ArrayList<CardItem> {
         return myDetailDealsLocalApi.generateList()
     }

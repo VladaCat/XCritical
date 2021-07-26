@@ -24,7 +24,7 @@ import java.util.regex.Pattern
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
-    
+
     //BINDING
     private lateinit var binding : ActivityLoginBinding
     private val viewModel by lazy { ViewModelProvider(this).get(LoginViewModel::class.java) }

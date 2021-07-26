@@ -10,10 +10,13 @@ class MyDetailDealsLocalApi @Inject constructor() {
 
     private var list = ArrayList<CardItem>()
     private var movieList:List<Movie>? = null
-    fun getMovieList(list: List<Movie>?){
+    fun createMovieList(list: List<Movie>?){
         movieList =list
     }
 
+    fun getMovieList():List<Movie>?{
+        return movieList
+    }
     fun generateList(): ArrayList<CardItem> {
         if(list.isNullOrEmpty())
         {

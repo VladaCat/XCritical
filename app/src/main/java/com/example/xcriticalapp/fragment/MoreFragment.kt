@@ -7,7 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.xcriticalapp.R
+import com.example.xcriticalapp.adapter.Adapter
+import com.example.xcriticalapp.adapter.MovieAdapter
 import com.example.xcriticalapp.viewModel.MoreViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,9 +30,14 @@ class MoreFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.createMovie()
         getMovieButton?.setOnClickListener {
-            var test = viewModel.getMovie()
+            val recyclerView = getView()?.findViewById<RecyclerView>(R.id.getMovie_RecyclerView)
+            recyclerView?.layoutManager = LinearLayoutManager(this.context)
+            recyclerView?.adapter = MovieAdapter(viewModel.getMovieList())
+           // var movieList = viewModel.getMovieList()
         }
+
     }
 
 }

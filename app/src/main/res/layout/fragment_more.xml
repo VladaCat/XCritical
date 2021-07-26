@@ -3,19 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_blue"
     tools:context=".fragment.MoreFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_blue"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/getMovies_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Сгенерировать список фильмов" />
+        <Button
+            android:id="@+id/getPicture_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Сгенерировать список фильмов"
+            tools:listitem="@layout/view_movie_card" />
+
+        <Button
+            android:id="@+id/getMovies_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Найти картинку" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/getMovie_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
 
 </FrameLayout>
