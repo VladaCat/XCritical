@@ -44,7 +44,6 @@
     <string name="presentation_second">Доступно: $9 481,73</string>
     <string name="presentation_third">P$L: $266,03</string>
     <string name="replenish_the_deposit">Пополнить депозит</string>
-
-
+    <string name="search">Поиск</string>
 
 </resources>

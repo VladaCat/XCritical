@@ -15,4 +15,5 @@ class MyViewModel @Inject constructor(private val presentationMyDealsUseCase: Pr
         return presentationMyDealsUseCase.getList()
     }
 
+
 }

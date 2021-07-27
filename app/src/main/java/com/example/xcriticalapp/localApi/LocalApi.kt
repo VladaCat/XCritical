@@ -6,7 +6,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class MyDetailDealsLocalApi @Inject constructor() {
+class LocalApi @Inject constructor() {
 
     private var list = ArrayList<CardItem>()
     private var movieList:List<Movie>? = null
@@ -31,7 +31,7 @@ class MyDetailDealsLocalApi @Inject constructor() {
     private fun createList()
     {
         for (i in 0 until 20) {
-            val item = CardItem( i ,"BATUSD", "CocaCola", "73,2391","/","73,5678","0,31%")
+            val item = CardItem( i ,"BATUSD $i", "CocaCola", "73,2391","/","73,5678","0,31%")
             list += item
         }
     }

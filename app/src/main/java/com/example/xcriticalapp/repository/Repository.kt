@@ -1,14 +1,14 @@
 package com.example.xcriticalapp.repository
 
 import com.example.xcriticalapp.adapter.CardItem
-import com.example.xcriticalapp.localApi.MyDetailDealsLocalApi
+import com.example.xcriticalapp.localApi.LocalApi
 import com.example.xcriticalapp.model.Movie
 import com.example.xcriticalapp.retrofit.RetrofitServices
 import javax.inject.Inject
 
 
-class MyDetailDealsRepository @Inject constructor(
-    private val myDetailDealsLocalApi: MyDetailDealsLocalApi,
+class Repository @Inject constructor(
+    private val localApi: LocalApi,
     private val retrofitServices: RetrofitServices
     ){
     private var listMovies : List<Movie>? = null
@@ -16,18 +16,18 @@ class MyDetailDealsRepository @Inject constructor(
     suspend fun createMovies()
     {
         listMovies = retrofitServices.getMovieList().body()
-        myDetailDealsLocalApi.createMovieList(listMovies)
+        localApi.createMovieList(listMovies)
     }
 
     fun getMovies(): List<Movie>? {
-        return myDetailDealsLocalApi.getMovieList()
+        return localApi.getMovieList()
     }
     fun getListFromApi(): ArrayList<CardItem> {
-        return myDetailDealsLocalApi.generateList()
+        return localApi.generateList()
     }
 
     fun getIdFromApi(id:Int):CardItem {
-        return myDetailDealsLocalApi.getModelById(id)
+        return localApi.getModelById(id)
     }
 
 }

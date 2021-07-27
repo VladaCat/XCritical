@@ -2,14 +2,24 @@ package com.example.xcriticalapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xcriticalapp.R
+import java.util.*
+import kotlin.collections.ArrayList
 
 
-class Adapter(private val cardList:List<CardItemWithImage>,
-              private val clickListener: (Int) -> Unit) : RecyclerView.Adapter<Adapter.ExampleViewHolder>(){
+class Adapter(private val cardList:ArrayList<CardItemWithImage>,
+              private val clickListener: (Int) -> Unit) : RecyclerView.Adapter<Adapter.ExampleViewHolder>(), Filterable{
+
+    var filterList = ArrayList<CardItemWithImage>()
+
+    init {
+        filterList = cardList
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
@@ -46,4 +56,32 @@ class Adapter(private val cardList:List<CardItemWithImage>,
         val starImage:ImageView=itemView.findViewById(R.id.star_imageView)
     }
 
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString()
+                if (charSearch.isEmpty()) {
+                    filterList = cardList
+                } else {
+                    val resultList = ArrayList<CardItemWithImage>()
+                    for (row in cardList) {
+                        if (row.nameOfCompany.lowercase(Locale.ROOT).contains(charSearch.lowercase(Locale.ROOT))) {
+                            resultList.add(row)
+                        }
+                    }
+                    filterList = resultList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = filterList
+                return filterResults
+            }
+
+            @Suppress("UNCHECKED_CAST")
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                filterList = results?.values as ArrayList<CardItemWithImage>
+                notifyDataSetChanged()
+            }
+
+        }
+    }
 }

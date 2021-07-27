@@ -14,12 +14,33 @@
 
         <com.example.xcriticalapp.ViewCustomDeposite
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" >
+
+        </com.example.xcriticalapp.ViewCustomDeposite>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/search_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:hint="@string/search"
+                android:inputType="textPersonName"
+                android:drawableStart="@drawable/ic_search"/>
+
+        </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             app:cardCornerRadius="16dp">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -29,6 +50,7 @@
                 android:paddingTop="0dp"
                 android:paddingBottom="0dp"
                 tools:listitem="@layout/recycle_view_card" />
+
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>

@@ -3,12 +3,12 @@ package com.example.xcriticalapp.useCase
 import com.example.xcriticalapp.R
 import com.example.xcriticalapp.adapter.CardItem
 import com.example.xcriticalapp.adapter.CardItemWithImage
-import com.example.xcriticalapp.repository.MyDetailDealsRepository
+import com.example.xcriticalapp.repository.Repository
 import javax.inject.Inject
 
-class PresentationMyDealsUseCase @Inject constructor(private val myDetailDealsRepository: MyDetailDealsRepository){
+class PresentationMyDealsUseCase @Inject constructor(private val repository: Repository){
 
-    private val listRepository:ArrayList<CardItem> = myDetailDealsRepository.getListFromApi()
+    private val listRepository:ArrayList<CardItem> = repository.getListFromApi()
     private val presentationList = ArrayList<CardItemWithImage>()
     fun getList(): ArrayList<CardItemWithImage> {
 
