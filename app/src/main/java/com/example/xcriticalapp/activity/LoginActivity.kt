@@ -18,6 +18,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.xcriticalapp.R
 import com.example.xcriticalapp.databinding.ActivityLoginBinding
+import com.example.xcriticalapp.dialogs.UnknownErrorDialog
+import com.example.xcriticalapp.fragment.ErrorLoginFragment
 import com.example.xcriticalapp.viewModel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Pattern
@@ -40,6 +42,10 @@ class LoginActivity : AppCompatActivity() {
         binding.viewModel = viewModel
         viewModel.getLoginAndPassword()
         initObserve()
+        binding.forgotPasswordTextView.setOnClickListener {
+            var dialog = UnknownErrorDialog()
+            dialog.show(supportFragmentManager,"unknownErrorDialog")
+        }
         //initListeners()
         Log.d("activityLiveCycleTest","onCreate")
     }

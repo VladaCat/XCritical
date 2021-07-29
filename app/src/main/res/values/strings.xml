@@ -45,5 +45,10 @@
     <string name="presentation_third">P$L: $266,03</string>
     <string name="replenish_the_deposit">Пополнить депозит</string>
     <string name="search">Поиск</string>
+    <string name="unknown_error">
+        Обнаружена
+        непредвиденная ошибка
+    </string>
+    <string name="ok">Ok</string>
 
 </resources>
