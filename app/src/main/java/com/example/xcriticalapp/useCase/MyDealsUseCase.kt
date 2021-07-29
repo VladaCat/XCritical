@@ -10,7 +10,4 @@ class MyDealsUseCase @Inject constructor(private val repository: Repository){
         return repository.getListFromApi()
     }
 
-    fun filterList(){
-        
-    }
 }

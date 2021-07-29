@@ -50,7 +50,7 @@ class MyDealsFragment : Fragment() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                adapter?.filter?.filter(s)
+                adapter?.updateFilteredList(viewModel.getFilterList(s.toString()))
             }
 
         })

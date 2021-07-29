@@ -16,4 +16,8 @@ class MyViewModel @Inject constructor(private val presentationMyDealsUseCase: Pr
     }
 
 
+    fun getFilterList(text:String):ArrayList<CardItemWithImage>?{
+        return presentationMyDealsUseCase.getFilteredList(text)
+    }
+
 }

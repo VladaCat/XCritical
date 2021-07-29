@@ -12,7 +12,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class Adapter(private val cardList:ArrayList<CardItemWithImage>,
+class Adapter(private var cardList:ArrayList<CardItemWithImage>,
               private val clickListener: (Int) -> Unit) : RecyclerView.Adapter<Adapter.ExampleViewHolder>(), Filterable{
 
     var filterList = ArrayList<CardItemWithImage>()
@@ -21,6 +21,10 @@ class Adapter(private val cardList:ArrayList<CardItemWithImage>,
         filterList = cardList
     }
 
+    fun updateFilteredList(filterList:ArrayList<CardItemWithImage>?){
+        cardList = filterList!!
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.recycle_view_card,

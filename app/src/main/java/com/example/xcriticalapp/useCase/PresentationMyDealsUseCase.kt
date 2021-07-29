@@ -4,12 +4,15 @@ import com.example.xcriticalapp.R
 import com.example.xcriticalapp.adapter.CardItem
 import com.example.xcriticalapp.adapter.CardItemWithImage
 import com.example.xcriticalapp.repository.Repository
+import java.util.*
 import javax.inject.Inject
+import kotlin.collections.ArrayList
 
 class PresentationMyDealsUseCase @Inject constructor(private val repository: Repository){
 
     private val listRepository:ArrayList<CardItem> = repository.getListFromApi()
     private val presentationList = ArrayList<CardItemWithImage>()
+    private var filterList:ArrayList<CardItemWithImage>?=null
     fun getList(): ArrayList<CardItemWithImage> {
 
         generatePresentationList()
@@ -41,5 +44,20 @@ class PresentationMyDealsUseCase @Inject constructor(private val repository: Rep
                     R.drawable.ic_star_3)
             }
         }
+    }
+
+    fun getFilteredList(searchText:String):ArrayList<CardItemWithImage>?{
+        val list = presentationList
+        filterList = if(searchText.isEmpty()){list}
+        else {
+            val resultFilter = ArrayList<CardItemWithImage>()
+            for(item in list!!){
+                if(item.nameOfCompany.lowercase(Locale.ROOT)!!.contains(searchText.lowercase(Locale.ROOT))){
+                    resultFilter.add(item)
+                }
+            }
+            resultFilter
+        }
+        return filterList
     }
 }
