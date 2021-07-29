@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_login)
         binding.lifecycleOwner=this
         binding.viewModel = viewModel
-
+        viewModel.getLoginAndPassword()
         initObserve()
         //initListeners()
         Log.d("activityLiveCycleTest","onCreate")
@@ -77,6 +77,7 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.isLoginSuccess.observe(this){
             if(it){
+                viewModel.saveLoginAndPassword()
                 val mainScreenIntent = Intent(this, MainScreen::class.java)
                 startActivity(mainScreenIntent)
                 finish()
