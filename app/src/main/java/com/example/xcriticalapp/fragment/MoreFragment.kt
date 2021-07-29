@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xcriticalapp.R
-import com.example.xcriticalapp.adapter.Adapter
 import com.example.xcriticalapp.adapter.MovieAdapter
 import com.example.xcriticalapp.viewModel.MoreViewModel
 import dagger.hilt.android.AndroidEntryPoint

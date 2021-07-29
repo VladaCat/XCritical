@@ -11,11 +11,13 @@ import android.widget.EditText
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xcriticalapp.viewModel.MyViewModel
-import com.example.xcriticalapp.adapter.Adapter
+import com.example.xcriticalapp.adapter.CustomAdapter
 import com.example.xcriticalapp.R
+import com.example.xcriticalapp.SwipeToDelete
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,7 +26,7 @@ class MyDealsFragment : Fragment() {
     private  val searchEditText by lazy{ view?.findViewById<EditText>(R.id.search_editText)}
     private val viewModel by lazy { ViewModelProvider(this).get(MyViewModel::class.java)}
 
-    private var adapter : Adapter? = null
+    private var customAdapter : CustomAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,12 +35,17 @@ class MyDealsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_my_deals, container, false)
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val recycler = getView()?.findViewById<RecyclerView>(R.id.recycler_view)
         recycler?.layoutManager = LinearLayoutManager(this.context)
-        adapter =  Adapter(viewModel.getList()) { id -> itemClicked(id) }
-        recycler?.adapter = adapter
+        customAdapter =  CustomAdapter(viewModel.getList()) { id -> itemClicked(id) }
+        recycler?.adapter = customAdapter
+
+        var itemTouchHelper = ItemTouchHelper(SwipeToDelete(customAdapter!!))
+        itemTouchHelper.attachToRecyclerView(recycler)
 
         searchEditText?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -50,7 +57,7 @@ class MyDealsFragment : Fragment() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                adapter?.updateFilteredList(viewModel.getFilterList(s.toString()))
+                customAdapter?.updateFilteredList(viewModel.getFilterList(s.toString()))
             }
 
         })

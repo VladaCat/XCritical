@@ -12,13 +12,18 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class Adapter(private var cardList:ArrayList<CardItemWithImage>,
-              private val clickListener: (Int) -> Unit) : RecyclerView.Adapter<Adapter.ExampleViewHolder>(), Filterable{
+class CustomAdapter(private var cardList:ArrayList<CardItemWithImage>,
+                    private val clickListener: (Int) -> Unit) : RecyclerView.Adapter<CustomAdapter.ExampleViewHolder>(), Filterable{
 
     var filterList = ArrayList<CardItemWithImage>()
 
     init {
         filterList = cardList
+    }
+
+    fun deleteItem(position: Int){
+        cardList.removeAt(position)
+        notifyItemRemoved(position)
     }
 
     fun updateFilteredList(filterList:ArrayList<CardItemWithImage>?){
