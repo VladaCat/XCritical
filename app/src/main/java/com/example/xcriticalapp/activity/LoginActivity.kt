@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -30,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
     //BINDING
     private lateinit var binding : ActivityLoginBinding
     private val viewModel by lazy { ViewModelProvider(this).get(LoginViewModel::class.java) }
+    private var dialog = UnknownErrorDialog(::buttonColorGreen)
 
     private val emailAddressPattern = Pattern.compile(
         "(?:[a-z0-9!#\$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#\$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)])"
@@ -43,13 +45,18 @@ class LoginActivity : AppCompatActivity() {
         viewModel.getLoginAndPassword()
         initObserve()
         binding.forgotPasswordTextView.setOnClickListener {
-            var dialog = UnknownErrorDialog()
+            //var dialog = UnknownErrorDialog()
+//            dialog.clickButton {
+//                buttonColorGreen()
+//            }
             dialog.show(supportFragmentManager,"unknownErrorDialog")
         }
         binding.registerButton.setOnClickListener {
+
             val registrationIntent = Intent(this,RegistrationActivity::class.java)
             startActivity(registrationIntent)
         }
+
         //initListeners()
         Log.d("activityLiveCycleTest","onCreate")
     }
@@ -83,6 +90,10 @@ class LoginActivity : AppCompatActivity() {
         Log.d("activityLiveCycleTest2","onStart")
     }
 
+
+    private fun buttonColorGreen(){
+        binding.signInButton.setBackgroundColor(ContextCompat.getColor(this,R.color.green))
+    }
     private fun initObserve(){
 
         viewModel.isLoginSuccess.observe(this){
