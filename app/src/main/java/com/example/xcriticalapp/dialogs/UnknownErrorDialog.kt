@@ -16,8 +16,9 @@ public class UnknownErrorDialog : DialogFragment(){
     ): View? {
         var rootView:View = inflater.inflate(R.layout.fragment_error_login, container, false)
         rootView.findViewById<TextView>(R.id.unknown_error_Button).setOnClickListener{
-            dismiss()
+            dismiss() //имитация что-то происходит
         }
         return rootView
     }
+
 }
