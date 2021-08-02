@@ -46,6 +46,10 @@ class LoginActivity : AppCompatActivity() {
             var dialog = UnknownErrorDialog()
             dialog.show(supportFragmentManager,"unknownErrorDialog")
         }
+        binding.registerButton.setOnClickListener {
+            val registrationIntent = Intent(this,RegistrationActivity::class.java)
+            startActivity(registrationIntent)
+        }
         //initListeners()
         Log.d("activityLiveCycleTest","onCreate")
     }
@@ -90,6 +94,7 @@ class LoginActivity : AppCompatActivity() {
             }
             else
             {
+
 
             }
         }

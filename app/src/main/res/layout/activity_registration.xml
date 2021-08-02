@@ -167,6 +167,10 @@
                 android:textColorHint="@color/app_light_purple"
                 android:textSize="12dp" />
 
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/incorrect_phone_number_textView"
                 android:layout_width="match_parent"
@@ -176,6 +180,8 @@
                 android:text="@string/incorrect_phone"
                 android:textColor="@color/app_light_red"
                 android:visibility="invisible" />
+
+
         </LinearLayout>
 
         <LinearLayout

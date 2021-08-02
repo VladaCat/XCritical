@@ -6,8 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import com.example.xcriticalapp.R
 
 class RegistrationActivity : AppCompatActivity() {
@@ -22,12 +21,40 @@ class RegistrationActivity : AppCompatActivity() {
     private val newRegistrationButton by lazy {findViewById<TextView>(R.id.new_registration_button)}
     private val termsOfUseCheckBox by lazy{findViewById<TextView>(R.id.terns_of_use_checkBox)}
 
+    lateinit var option : Spinner
+    lateinit var phone : EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        initRegistrationListeners()
+        option = findViewById(R.id.spinner)
+        phone = findViewById(R.id.registration_editTextPhone)
+
+        val options = arrayOf("Ukraine(+380)","Russia(+7)","Australia(+63)")
+
+        option.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,options)
+        option.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+               // phone.text = "Phone"
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                phone.setText(options.get(position))
+            }
+        }
+
+        //var countries = arrayOf("+380","+7","+61","+43")
+        //var arrayAdapter = ArrayAdapter(this,android.R.layout.simple_spinner_item, countries)
+
+        //spinner.adapter = arrayAdapter
+
+        //initRegistrationListeners()
     }
 
     private fun initRegistrationListeners() {
