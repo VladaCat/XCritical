@@ -1,210 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/app_main_color"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:verticalScrollbarPosition="right"
-    tools:context=".activity.RegistrationActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/registration_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.xcriticalapp.viewModel.ViewModelRegistration"/>
+    </data>
 
-    <ImageView
-        android:id="@+id/xcritical_registration_imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/registration_guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_frame" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_main_color"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:verticalScrollbarPosition="right"
+        tools:context=".activity.RegistrationActivity">
 
-    <LinearLayout
-        android:id="@+id/main_registration_linearlayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/registration_guideline">
-
-        <LinearLayout
-            android:id="@+id/first_name_registration_linearlayout"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/first_name_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:text="@string/first_name" />
-
-            <EditText
-                android:id="@+id/add_first_name_plainView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/add_first_name"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/app_light_purple"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/required_field_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="4dp"
-                android:text="@string/required_field"
-                android:textColor="@color/app_light_red"
-                android:visibility="invisible" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/second_name_registration_linearlayout"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/second_name_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:text="@string/second_name" />
-
-            <EditText
-                android:id="@+id/add_second_name_plainView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/add_second_name"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/app_light_purple"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/required_second_field_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:text="@string/required_field"
-                android:textColor="@color/app_light_red"
-                android:visibility="invisible" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/registration_email_linearlayout"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/registration_email_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:text="@string/email" />
-
-            <EditText
-                android:id="@+id/registration_email_editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/add_email"
-                android:inputType="textEmailAddress"
-                android:textColorHint="@color/app_light_purple"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/incorrect_email_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:text="@string/incorrect_email"
-                android:textColor="@color/app_light_red"
-                android:visibility="invisible" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/registration_phone_layout"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/registration_phone_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:text="@string/phone" />
-
-            <EditText
-                android:id="@+id/registration_editTextPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/phone"
-                android:inputType="phone"
-                android:textColorHint="@color/app_light_purple"
-                android:textSize="12dp" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/incorrect_phone_number_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:text="@string/incorrect_phone"
-                android:textColor="@color/app_light_red"
-                android:visibility="invisible" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/registration_buttons_layout"
-            android:layout_width="match_parent"
-            android:layout_height="76dp"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/new_registration_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_style"
-                android:text="@string/register"
-                android:textAllCaps="false" />
-
-        </LinearLayout>
-
-        <CheckBox
-            android:id="@+id/terns_of_use_checkBox"
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/registration_guideline"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/terms_of_use" />
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
 
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/xcritical_registration_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/registration_guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_frame" />
+
+        <LinearLayout
+            android:id="@+id/main_registration_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/registration_guideline">
+
+            <LinearLayout
+                android:id="@+id/first_name_registration_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/first_name_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/first_name" />
+
+                <EditText
+                    android:id="@+id/add_first_name_plainView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/add_first_name"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/app_light_purple"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/required_field_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
+                    android:text="@string/required_field"
+                    android:textColor="@color/app_light_red"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/second_name_registration_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/second_name_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/second_name" />
+
+                <EditText
+                    android:id="@+id/add_second_name_plainView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/add_second_name"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/app_light_purple"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/required_second_field_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/required_field"
+                    android:textColor="@color/app_light_red"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/registration_email_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/registration_email_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/email" />
+
+                <EditText
+                    android:id="@+id/registration_email_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/add_email"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/app_light_purple"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/incorrect_email_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/incorrect_email"
+                    android:textColor="@color/app_light_red"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/registration_phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/registration_phone_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/phone" />
+
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="40dp"
+                    android:layout_height="22dp"
+                    app:layout_constraintEnd_toStartOf="@+id/registration_editTextPhone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="39dp" />
+
+                <EditText
+                    android:id="@+id/registration_editTextPhone"
+                    android:layout_width="300dp"
+
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/phone"
+                    android:inputType="phone"
+                    android:textColorHint="@color/app_light_purple"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registration_phone_textView"
+                    app:layout_constraintVertical_bias="0.295" />
+
+                <TextView
+                    android:id="@+id/incorrect_phone_number_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="19dp"
+                    android:text="@string/incorrect_phone"
+                    android:textColor="@color/app_light_red"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/registration_buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/new_registration_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_style"
+                    android:text="@string/register"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/terns_of_use_checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_of_use" />
+
+            <Switch
+                android:id="@+id/terns_of_use_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_of_use" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
